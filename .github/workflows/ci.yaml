@@ -42,7 +42,9 @@ jobs:
           path: build
       - name: Create a release
         if: ${{github.event_name == 'push' && github.ref == 'refs/heads/workflow'}}
-        run: npx semantic-release
+        run: |
+          export GITHUB_TOKEN
+          npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Deploy to Staging
