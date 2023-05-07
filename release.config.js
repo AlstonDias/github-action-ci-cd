@@ -1,5 +1,5 @@
 module.exports = {
-    branches: "master",
+    branches: "workflow",
     repositoryUrl: "https://github.com/AlstonDias/github-action-ci-cd",
     plugins: ["@semantic-release/commit-analyzer",
         "@semantic-release/release-notes-generator",

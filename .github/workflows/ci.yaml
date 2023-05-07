@@ -41,7 +41,7 @@ jobs:
           name: build
           path: build
       - name: Create a release
-        if: ${{github.event_name == 'push' && github.ref == 'refs/heads/master'}}
+        if: ${{github.event_name == 'push' && github.ref == 'refs/heads/workflow'}}
         run: npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
