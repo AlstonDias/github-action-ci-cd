@@ -50,7 +50,10 @@ jobs:
           zip -r coverage.zip ./coverage
       - name: Create a release
         if: ${{github.event_name == 'push' && github.ref == 'refs/heads/master'}}
-        run: npx semantic-release
+        run: |
+          git config user.name "Alston Dias"
+          git config user.email AlstonDias@ibm.com
+          npx semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Deploy to Staging
