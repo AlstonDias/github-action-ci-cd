@@ -19,8 +19,8 @@
     "format:check": "prettier --check \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\"",
     "format": "prettier --write \"**/*.{js,jsx,yml,yaml,json,css,scss,md}\""
   },
-  "husky":{
-    "hooks":{
+  "husky": {
+    "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
