@@ -48,11 +48,11 @@ jobs:
         run: |
           zip -r build.zip ./build
           zip -r coverage.zip ./coverage
-      - name: Create a release
-        if: ${{github.event_name == 'push' && github.ref == 'refs/heads/master'}}
-        run: npx semantic-release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+      # - name: Create a release
+      #   if: ${{github.event_name == 'push' && github.ref == 'refs/heads/master'}}
+      #   run: npx semantic-release
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
       - name: Deploy to Staging
         if: ${{github.event_name == 'push' && github.ref == 'refs/heads/develop'}}
         run: npx surge --project ./build --domain nappy-action.surge.sh
